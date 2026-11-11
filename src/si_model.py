@@ -3,7 +3,7 @@ Susceptible-Infected (SI) Epidemic Model Module.
 Implements stochastic transmission over network contact topologies.
 """
 
-from typing import Dict, List, Optional, Any
+from typing import Dict, Optional, Any
 import networkx as nx
 import numpy as np
 

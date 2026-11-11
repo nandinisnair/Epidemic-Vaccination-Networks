@@ -5,7 +5,7 @@ centrality rankings, epidemic trajectories, and multi-strategy vaccination evalu
 """
 
 from pathlib import Path
-from typing import Dict, List, Any, Optional, Tuple
+from typing import Dict, List, Optional, Tuple
 import networkx as nx
 import numpy as np
 import pandas as pd
@@ -105,10 +105,8 @@ class NetworkVisualizer:
     ) -> Tuple[Path, Path]:
         """Plots degree distribution histogram and frequency curve."""
         degrees = [d for _, d in G.degree()]
-        max_deg = max(degrees)
-        min_deg = min(degrees)
 
-        # 1. Histogram (matching Figure 2 in paper)
+        # Histogram (matching Figure 2 in paper)
         fig1, ax1 = plt.subplots(figsize=(8, 6), dpi=300)
         ax1.hist(degrees, bins=30, color="#414ff0", alpha=0.85, edgecolor="#1c25a0")
         ax1.set_xlabel("Degree", fontsize=12)

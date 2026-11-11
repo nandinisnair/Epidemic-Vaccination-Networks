@@ -33,9 +33,9 @@ def main():
     print(f"SIR Simulation complete (100 runs):")
     print(f"  - Beta: {runner.config.epidemic.sir_beta}")
     print(f"  - Gamma: {runner.config.epidemic.sir_gamma}")
-    print(f"  - Mean Peak Infected (IP): {sir_results['peak_mean']:.2f} ± {sir_results['peak_std']:.2f}")
+    print(f"  - Mean Peak Infected (IP): {sir_results['peak_mean']:.2f} +/- {sir_results['peak_std']:.2f}")
     print(f"  - Mean Peak Time: step {sir_results['peak_time_mean']:.1f}")
-    print(f"  - Mean Total Infected (TI): {sir_results['total_infected_mean']:.2f} ± {sir_results['total_infected_std']:.2f}")
+    print(f"  - Mean Total Infected (TI): {sir_results['total_infected_mean']:.2f} +/- {sir_results['total_infected_std']:.2f}")
 
     viz = NetworkVisualizer()
     p_sir = viz.plot_sir_dynamics(sir_results)

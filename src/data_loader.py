@@ -32,14 +32,14 @@ class DataLoader:
         # Check for local tar.bz2 in raw data directory
         archive_path = self.raw_dir / self.config.raw_archive_name
         
-        # Check potential user uploaded archive location if raw directory archive doesn't exist
+        # Check for local archive in raw data directory or parent data directory
         if not archive_path.exists():
-            # Check user uploaded folder if accessible
-            uploaded_dir = Path(r"C:\Users\nandi\.gemini\antigravity\brain\dcefa59c-bb6d-40e8-acbb-c26318c2f106\.user_uploaded")
-            if uploaded_dir.exists():
-                for candidate in uploaded_dir.glob("*.bz2"):
-                    archive_path = candidate
-                    break
+            for candidate_dir in [self.raw_dir, self.raw_dir.parent]:
+                if candidate_dir.exists():
+                    candidates = list(candidate_dir.glob("*.tar.bz2")) + list(candidate_dir.glob("*.bz2"))
+                    if candidates:
+                        archive_path = candidates[0]
+                        break
 
         if archive_path.exists():
             print(f"[DataLoader] Extracting archive from: {archive_path}")

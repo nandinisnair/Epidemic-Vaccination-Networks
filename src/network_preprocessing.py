@@ -5,7 +5,7 @@ handles reciprocity and self-loops, and prepares the largest connected component
 """
 
 from pathlib import Path
-from typing import Tuple, Dict, Any
+from typing import Tuple, Dict
 import networkx as nx
 import pandas as pd
 

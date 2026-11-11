@@ -4,7 +4,7 @@ Implements Random, Degree, Strength, Betweenness, and Weighted Betweenness
 immunization interventions via structural node removal.
 """
 
-from typing import List, Tuple, Dict, Any, Optional
+from typing import List, Tuple, Dict, Optional
 import networkx as nx
 import numpy as np
 

@@ -7,6 +7,7 @@ vaccination simulation, evaluation, table generation, and plotting.
 import sys
 import time
 from pathlib import Path
+import pandas as pd
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR))
@@ -59,7 +60,6 @@ def run_pipeline():
     viz.plot_largest_component(G_lcc)
     viz.plot_degree_distribution(G)
     master_cent_df = analyzer.tables_dir.parent / "centrality_rankings" / "all_centrality_measures.csv"
-    import pandas as pd
     viz.plot_centrality_comparisons(pd.read_csv(master_cent_df))
 
     # 5. Baseline SI & SIR Epidemic Simulations

@@ -32,7 +32,7 @@ def main():
     print(f"SI Simulation complete (100 runs):")
     print(f"  - Initial Infected: 1% (~2 nodes)")
     print(f"  - Beta: {runner.config.epidemic.si_beta}")
-    print(f"  - Mean Total Infected at t=50: {si_results['total_infected_mean']:.2f} ± {si_results['total_infected_std']:.2f}")
+    print(f"  - Mean Total Infected at t=50: {si_results['total_infected_mean']:.2f} +/- {si_results['total_infected_std']:.2f}")
 
     viz = NetworkVisualizer()
     p_si = viz.plot_si_dynamics(si_results)
